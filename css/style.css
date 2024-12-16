@@ -1,0 +1,82 @@
+/* Définir les polices par défaut */
+body {
+    font-family: Arial, Calibri, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4C4C8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+/* Conteneur principal pour centrer le contenu */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Logo */
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Description */
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Groupe de boutons */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+/* Style des boutons */
+.btn {
+    flex: 1;
+    padding: 10px;
+    margin: 0 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.btn-signup {
+    background-color: #DC511C;
+}
+
+.btn-login {
+    background-color: #4C4C8A;
+    border: 2px solid white;
+}
+
+/* Texte "Ou ignorer" en italique */
+.ignore {
+    font-style: italic;
+    color: white;
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Style responsive pour les plus grands écrans */
+@media(min-width: 768px) {
+    .btn {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
+    .description {
+        font-size: 1.5rem;
+    }
+}

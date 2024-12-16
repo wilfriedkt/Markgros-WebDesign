@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/detailProduit.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <div class="en-tete">
+            <button class="btn-retour">
+                <i data-lucide="arrow-left"></i>
+            </button>
+            <img class="logo" src="../img/logoMarkgrosVari.png" alt="logoMarkgros">
+        </div>
+
+        <div class="section-principale">
+            <!-- Image produit -->
+            <div class="image-produit">
+                <img src="../img/four.jpg" alt="Four électrique" />
+            </div>
+
+            <!-- Infos produit -->
+            <div class="info-produit">
+                <div class="evaluation">⭐⭐⭐⭐⭐</div>
+                <h1 class="titre-produit">Four électrique</h1>
+                <div class="prix">5 000 FCFA</div>
+            </div>
+
+            <!-- Couleurs -->
+            <div class="section-couleurs">
+                <p>Couleurs disponibles</p>
+                <div class="options-couleur">
+                    <div class="couleur" style="background-color: #4A4A9E"></div>
+                    <div class="couleur" style="background-color: #FF69B4"></div>
+                    <div class="couleur" style="background-color: #40E0D0"></div>
+                </div>
+            </div>
+
+            <!-- Détails -->
+            <div class="details">
+                <p>Details</p>
+            </div>
+
+            <!-- Actions -->
+            <p class="appel-action">Passez votre commande dès maintenant !</p>
+
+            <div class="groupe-boutons">
+                <button class="btn-panier">
+                    <i data-lucide="shopping-cart"></i>
+                    Ajouter au panier
+                </button>
+                <button class="btn-commander">Commander</button>
+            </div>
+
+            <!-- Option crédit -->
+            <div class="option-credit">
+                <p>Votre budget est limité ?</p>
+                <button class="btn-credit">
+                    <i data-lucide="arrow-right"></i>
+                    Option de commande à crédit
+                </button>
+            </div>
+
+            <!-- Produits similaires -->
+            <div class="produits-similaires">
+                <h2 class="titre-similaires">Cherchez-vous d'autres produits similaires ?</h2>
+                <div class="grille-produits">
+                    <div class="carte-produit">
+                        <div class="badge-nouveau">Nouveau</div>
+                        <img src="../img/refrig.jpg" alt="Fer à Vapeur" />
+                        <h3 class="titre">Fer à Vapeur</h3>
+                        <p class="prix">5 000 FCFA</p>
+                        <div class="evaluation">⭐⭐⭐⭐⭐</div>
+                        <button class="btn-panier">
+                            <i data-lucide="shopping-cart"></i>
+                            Ajouter au panier
+                        </button>
+                        <button class="btn-acheter">
+                            <i data-lucide="money"></i>
+                            Acheter
+                        </button>
+                    </div>
+                    
+
+                    <div class="carte-produit">
+                        <div class="badge-nouveau">Nouveau</div>
+                        <img src="../img/fervapeur.jpg" alt="Fer à Vapeur" />
+                        <h3 class="titre">Fer à Vapeur</h3>
+                        <p class="prix">5 000 FCFA</p>
+                        <div class="evaluation">⭐⭐⭐⭐⭐</div>
+                        <button class="btn-panier">
+                            <i data-lucide="shopping-cart"></i>
+                            Ajouter au panier
+                        </button>
+                        <button class="btn-acheter">
+                            <i data-lucide="money"></i>
+                            Acheter
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

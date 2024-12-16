@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Commande de produit - Mon E-commerce</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="../css/commandeCredit.css">
+
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div class="container-md p-0 bg-white">
+        <header id="header">
+            <!-- Inclure navbar.php -->
+             <!-- En-tête -->
+            <div class="en-tete">
+                <button class="btn-retour">
+                    <i data-lucide="arrow-left"></i>
+                </button>
+                <img class="logo" src="../img/logoMarkgrosVari.png" alt="logoMarkgros">
+            </div>
+        </header>
+
+        <main class="px-4 py-5">
+            <h1 class="h2 text-center text-uppercase color-2 bgcolor-4 rounded-top p-3 mb-5 position-relative">
+                Commander un produit
+                <span class="position-absolute" style="top: -15px; right: 20px;">
+                    <i class="fas fa-box fa-2x text-white"></i>
+                </span>
+            </h1>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <form class="order-form" id="orderForm">
+                        <div class="step-indicator">
+                            <div class="progress-bar-steps"></div>
+                            <div class="step active">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Produit sélectionné</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Informations</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Récapitulatif</div>
+                            </div>
+                        </div>
+
+                        <!-- Étape 1: Sélection du produit -->
+                        <div class="form-step active" id="step1">
+                            <h3 class="h4 mb-4">Votre produit sélectionné</h3>
+                            
+                            <div class="product-card selected">
+                                <div class="product-info">
+                                    <h4>Produit Exemples</h4>
+                                    <img src="img/produits/exemple.jpg" class="card-img-top" alt="Produit Exemples">
+                                    <p class="text-muted mb-0">Description courte du produit...</p>
+                                    <div class="mt-3">
+                                        <span class="badge badge-info mr-2">Prix : 25,00 €</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button type="button" class="btn btn-next" onclick="nextStep(1)">
+                                    Continuer
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Étape 2: Informations -->
+                        <div class="form-step" id="step2">
+                            <h3 class="h4 mb-4">Vos informations</h3>
+                            
+                            <div class="form-group">
+                                <label for="matricule">Numéro de matricule</label>
+                                <input type="text" class="form-control" id="matricule" value="22-ESATIC0189BW" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Nom</label>
+                                <input type="text" class="form-control" id="lastname" value="TOURE" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname">Prénom</label>
+                                <input type="text" class="form-control" id="firstname" value="WILFRIED" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse email</label>
+                                <input type="email" class="form-control" id="email" value="wilfriedtoure914@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" class="form-control" id="phone" value="0565077511" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="salarySlip">Télécharger votre carte professionnelle</label>
+                                <input type="file" class="form-control-file" id="carteSlip" accept=".pdf,.jpg,.jpeg,.png" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="salarySlip">Télécharger votre bulletin de salaire</label>
+                                <input type="file" class="form-control-file" id="salarySlip" accept=".pdf,.jpg,.jpeg,.png" required>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button type="button" class="btn btn-next" onclick="nextStep(2)">
+                                    Continuer
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Étape 3: Récapitulatif -->
+                        <div class="form-step" id="step3">
+                            <h3 class="h4 mb-4">Récapitulatif de la commande</h3>
+
+                            <div id="summary"></div>
+
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-next">
+                                    Valider la commande
+                                    <i class="fas fa-check ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <!-- Inclure footer.php -->
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function nextStep(step) {
+            const currentStep = document.getElementById(`step${step}`);
+            const nextStep = document.getElementById(`step${step + 1}`);
+            currentStep.classList.remove('active');
+            nextStep.classList.add('active');
+
+            const steps = document.querySelectorAll('.step');
+            steps[step - 1].classList.remove('active');
+            steps[step].classList.add('active');
+
+            if (step === 2) {
+                updateSummary();
+            }
+        }
+
+        function updateSummary() {
+            const productName = document.querySelector('.product-card.selected h4').innerText;
+            const productPrice = document.querySelector('.product-card.selected .badge').innerText;
+            const matricule = document.getElementById('matricule').value;
+            const lastname = document.getElementById('lastname').value;
+            const firstname = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const carteProf = document.getElementById('carteSlip').value;
+            const bulletinSalaire = document.getElementById('salarySlip').value;
+
+            const summaryHtml = `
+                <h4>Produit sélectionné :</h4>
+                <p><strong>${productName}</strong></p>
+                <p>${productPrice}</p>
+                <h4>Informations personnelles :</h4>
+                <p><strong>Numéro de matricule :</strong> ${matricule}</p>
+                <p><strong>Nom :</strong> ${lastname}</p>
+                <p><strong>Prénom :</strong> ${firstname}</p>
+                <p><strong>Email :</strong> ${email}</p>
+                <p><strong>Téléphone :</strong> ${phone}</p>
+                <div><strong>Carte Professionnelle :</strong> ${carteProf}</div>
+                <p><strong>Bulletion de salaire :</strong> ${bulletinSalaire}</p>
+            `;
+
+            document.getElementById('summary').innerHTML = summaryHtml;
+        }
+
+        document.getElementById('orderForm').onsubmit = function(event) {
+            event.preventDefault();
+            alert('Commande validée ! Merci pour votre achat.');
+            // Ici, vous pouvez ajouter la logique pour traiter la commande et stocker les données dans la base de données.
+        };
+    </script>
+</body>
+</html>
